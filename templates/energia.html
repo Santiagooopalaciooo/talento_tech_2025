@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Energia Renovable</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='img/apple-icon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/templatemo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome.min.css')}}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-white">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    Proyecto Talento Tech Energía Renovable
+                </div>
+                <div>
+                    Presentado Por: Santiago Palacio - Alexander Villaneda
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img class="img-fluid text-success m-1" src="{{url_for('static', filename='img/banner_img_01.png')}}" width="3%">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{{ url_for('index')}}">
+                Energía Limpia
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index')}}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('energia') }}">Energía Hidroeléctrica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('calculadora') }}">Calculadora</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('datos')}}">Datos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <section class="bg-dark py-5">
+      <div class="container text-center"></div>
+        <figure class="text-center col-md-12">
+            <img src="{{url_for('static', filename='img/h_4.png')}}" class="figure-img img-fluid rounded " alt="..." width="40%">
+            <figcaption class="text-white">Las hidroeléctricas generan electricidad aprovechando la energía del agua en movimiento. <br>
+              Son una fuente de energía renovable, sostenible y no contaminante.</figcaption>
+          </figure>
+    </section>
+    <!-- Close Banner -->
+
+    <!-- End Section -->
+
+    <!-- Start Brands -->
+    <section class="bg-light py-5 col-md-12">
+      <div class="row">
+        <h1 class="text-center col-md-12">Tipos de Hidroeléctricas</h1>
+        <hr class="col-md-12" style=" background-color: #04a02b; height: 0.2rem;">
+        <div class="col-md-12"></div>
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/h_2.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Centrales de embalse:</h5>
+                  <p class="card-text"> Utilizan grandes presas para almacenar agua y generar electricidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/h_1.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Centrales de agua fluyente:</h5>
+                  <p class="card-text">Aprovechan el flujo natural de los ríos sin necesidad de embalses.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/h_3.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Centrales de bombeo o reversibles:</h5>
+                  <p class="card-text"> Almacenan energía bombeando agua a un embalse superior y liberándola cuando se necesita electricidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        
+
+    </section>
+
+    <section class="bg-dark py-5 col-md-12">
+      <div class="row">
+        <h1 class="text-center col-md-12 text-white">Beneficios de las Hidroeléctricas</h1>
+        <hr class="col-md-12" style=" background-color: #04a02b; height: 0.2rem;">
+        <div class="col-md-12">
+          <hr class="col-12">
+        </div>
+        <div class="container my-4 col-md-5 ">
+          <div class="card mb-3 sombra-blanca" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Energía Renovable:</h5>
+                  <p class="card-text">Utilizan la energía natural del agua en movimiento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra-blanca" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Bajas Emisiones:</h5>
+                  <p class="card-text">No emiten gases de efecto invernadero durante la generación de electricidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra-blanca" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Fiabilidad:</h5>
+                  <p class="card-text">Capaces de proporcionar electricidad de manera constante, día y noche.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra-blanca" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Vida Útil:</h5>
+                  <p class="card-text">Las instalaciones hidroeléctricas suelen tener una larga vida útil y bajos costos de operación.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="container my-4 col-md-5">
+        <div class="card mb-3 sombra-blanca" style="max-width: 600px;">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Transmisión de Energía:</h5>
+                <p class="card-text">La electricidad generada se transporta a la red eléctrica y llega a los hogares y negocios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+
+    <section class="bg-light py-5 col-md-12">
+      <div class="row">
+        <h1 class="text-center col-md-12">Proceso de Generación</h1>
+        <hr class="col-md-12" style=" background-color: #04a02b; height: 0.2rem;">
+        <div class="col-md-12"></div>
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/a_1.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Captación del Agua:</h5>
+                  <p class="card-text">El agua es recogida en un embalse o directamente de un río.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/a_2.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Caída del Agua:</h5>
+                  <p class="card-text">El agua cae a través de una estructura, generalmente una presa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/a_3.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Movimiento de Turbinas:</h5>
+                  <p class="card-text">La fuerza del agua en caída hace girar las turbinas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container my-4 col-md-5">
+          <div class="card mb-3 sombra" style="max-width: 600px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{url_for('static', filename='img/a_4.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Generación de Electricidad:</h5>
+                  <p class="card-text">Las turbinas accionan un generador que produce electricidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="container my-4 col-md-5">
+        <div class="card mb-3 sombra" style="max-width: 600px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{{url_for('static', filename='img/a_5.png')}}" class="img-fluid rounded-start imagen-card" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Transmisión de Energía:</h5>
+                <p class="card-text">La electricidad generada se transporta a la red eléctrica y llega a los hogares y negocios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </section>
+    <!--End Brands-->
+
+
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-white fondo-footer">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>sitios de información:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="https://www.facebook.com/ContraloriadeBogota/videos/as%C3%AD-fue-nuestra-visita-a-la-central-de-generaci%C3%B3n-hidroel%C3%A9ctrica-tequendama/1387690048711763/" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/urragenerador/reel/DAs8YdrvDe6/" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-hand-holding-droplet" style="color: #2912f0;"></i>Energia hidroeléctrica
+            </h6>
+            <p>
+                La energía hidroeléctrica es aquella que se genera al transformar la fuerza del agua en energía eléctrica.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-1 col-xl-1 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Berna, Suiza</p>
+            <p>
+                <i class="fas fa-envelope me-3"></i>palaciospatinosantiago@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i>+57 321 6180097</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright:
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+    <!-- Start Script -->
+    <script src="{{url_for('static', filename='js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/templatemo.js')}}"></script>
+    <script src="{{url_for('static', filename='js/custom.js')}}"></script>
+    <!-- End Script -->
+</body>
+
+</html>

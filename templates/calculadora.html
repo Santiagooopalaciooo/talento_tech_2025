@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Energia Renovable</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='img/apple-icon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/templatemo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome.min.css')}}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-white">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    Proyecto Talento Tech Energía Renovable
+                </div>
+                <div>
+                    Presentado Por: Santiago Palacio - Alexander Villaneda
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img class="img-fluid text-success m-1" src="{{url_for('static', filename='img/banner_img_01.png')}}" width="3%">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{{ url_for('index')}}">
+                Energía Limpia
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('energia') }}">Energía Hidroeléctrica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('calculadora') }}">Calculadora</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('datos') }}">Datos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Start Section -->
+    <section class="container py-5">
+        <h2 class="page-section-heading text-center text-uppercase">Estimador de Energía Renovable en el Consumo Eléctrico</h2><br>
+        <form method="POST">
+        <div class="form-floating mb-3 sombra">
+            <input class="form-control" id="consumo_total" name="consumo_total" type="text" placeholder="Enter your name..." required />
+            <label for="name">Consumo Total (kWh):</label>
+        </div><br>
+        
+            {% if porcentaje_renovable is not none %}
+                <center><h4 class="text-center"><i class="fas fa-solar-panel"></i> El porcentaje de energía renovable en tu consumo es: {{ porcentaje_renovable | round(2) }}%</h4></center>
+            {% elif error %}
+                <center><h4>{{ error }}</h4></center>
+            {% endif %}
+        <br>
+        <div class="text-center mt-4">
+            <button class="btn btn-xl btn-success sombra"><i class="fas fa-plug me-2"></i> Calcular</button>
+        </div></form>
+    </section>
+
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-white fondo-footer">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>sitios de información:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="https://www.facebook.com/ContraloriadeBogota/videos/as%C3%AD-fue-nuestra-visita-a-la-central-de-generaci%C3%B3n-hidroel%C3%A9ctrica-tequendama/1387690048711763/" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/urragenerador/reel/DAs8YdrvDe6/" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-hand-holding-droplet" style="color: #2912f0;"></i>Energia hidroeléctrica
+            </h6>
+            <p>
+                La energía hidroeléctrica es aquella que se genera al transformar la fuerza del agua en energía eléctrica.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-1 col-xl-1 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Berna, Suiza</p>
+            <p>
+                <i class="fas fa-envelope me-3"></i>palaciospatinosantiago@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i>+57 321 6180097</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright:
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+
+    <!-- Start Script -->
+    <script src="{{url_for('static', filename='js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/templatemo.js')}}"></script>
+    <script src="{{url_for('static', filename='js/custom.js')}}"></script>
+    <!-- End Script -->
+</body>
+
+</html>

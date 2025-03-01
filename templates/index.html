@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Energia Renovable</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='img/apple-icon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/templatemo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontawesome.min.css')}}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-white">
+            <div class="w-100 d-flex justify-content-between">
+                <div >
+                    Proyecto Talento Tech Energía Renovable
+                </div>
+                <div>
+                    Presentado Por: Santiago Palacio - Alexander Villaneda
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between bg-blue align-items-center">
+            <img class="img-fluid text-success m-1" src="{{url_for('static', filename='img/banner_img_01.png')}}" width="3%">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="{{ url_for('index')}}">
+                Energía Limpia
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link bg-blue" href="{{ url_for('index')}}">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-blue" href="{{ url_for('energia') }}">Energía Hidroeléctrica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-blue" href="{{ url_for('calculadora') }}">Calculadora</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-blue" href="{{ url_for('datos')}}">Datos</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="12000">
+                <div class="container">
+                    <div class="row p-5">
+                        <img class="d-block w-100 miimagen" src="{{url_for('static', filename='img/h_3.png')}}" alt="">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        </div>
+                        <div class="col-lg-12 mb-0 d-flex align-items-center">
+                            <div class="text-align-left text-center text-azulclaro">
+                                <h1 class="h1 text-azulclaro">Central Hidroeléctrica del Guavio</h1>
+                                <h3 class="h2 text-white">La mayor planta hidroeléctrica de Colombia, ubicada en Cundinamarca, con una capacidad de 1,260 MW.</h3>
+                                <p class="text-claro">
+                                    Inaugurada en 1992, aprovecha las aguas del río Guavio para generar electricidad y regula el caudal del río para prevenir inundaciones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="12000">
+                <div class="container">
+                    <div class="row p-5">
+                        <img class="d-block w-100 miimagen" src="{{url_for('static', filename='img/h_1.png')}}" alt="">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        </div>
+                        <div class="col-lg-12 mb-0 d-flex align-items-center">
+                            <div class="text-align-left text-center text-azulclaro">
+                                <h1 class="h1 text-azulclaro">Central Hidroeléctrica San Carlos</h1>
+                                <h3 class="h2 text-white">Una de las centrales más grandes y eficientes de Colombia, ubicada en Antioquia, con una capacidad de 1,240 MW.</h3>
+                                <p class="text-claro">
+                                    Desde 1984, utiliza las aguas de los ríos San Carlos, Guatapé y Calderas, destacándose por su infraestructura avanzada y operación sostenible.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item " data-bs-interval="12000">
+                <div class="container">
+                    <div class="row p-5 ">
+                        <img class="d-block w-100 miimagen" src="{{url_for('static', filename='img/h_2.png')}}" alt="">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">   
+                        </div>
+                        <div class="col-lg-12 mb-0 d-flex align-items-center">
+                            <div class="text-align-left text-center ">
+                                <h1 class="h1 text-azulclaro">Hidroituango</h1>
+                                <br class="bg-light">
+                                <h3 class="h2 text-white">Un ambicioso proyecto hidroeléctrico en Antioquia con una capacidad de 1,200 MW, inaugurado en 2022.</h3>
+                                <p class="text-claro">
+                                    Aprovecha las aguas del río Cauca y representa un avance significativo en infraestructura energética y desarrollo sostenible en Colombia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Cuadro de mando</h1>
+                <hr class="col-md-12 " style=" background-color: #04a02b; height: 0.2rem;">
+                <p>
+                    Las energías renovables iluminan el camino hacia un futuro más limpio, verde y lleno de posibilidades para el planeta.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-5 p-5 m-3 card sombra">
+                <img src="data:image/png;base64,{{ graph_url }}" alt="Gráfico de Barras" width="100%" height="100%">
+            </div>
+            <div class="col-12 col-md-5 p-5 m-3 card sombra">
+                <img src="data:image/png;base64,{{ graph_url2 }}" alt="Gráfico de Torta" width="100%" height="100%">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-5 p-5 m-3 card sombra">
+                <img src="data:image/png;base64,{{ graph_url3 }}" alt="Gráfico de Lineas" width="100%" height="100%">
+            </div>
+            <div class="col-12 col-md-5 p-5 m-3 card sombra">
+                <img src="data:image/png;base64,{{ graph_url4 }}" alt="Gráfico de Area" width="100%" height="100%">
+            </div>
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-white fondo-footer">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>sitios de información:</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="https://www.facebook.com/ContraloriadeBogota/videos/as%C3%AD-fue-nuestra-visita-a-la-central-de-generaci%C3%B3n-hidroel%C3%A9ctrica-tequendama/1387690048711763/" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/urragenerador/reel/DAs8YdrvDe6/" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-hand-holding-droplet" style="color: #2912f0;"></i>Energia hidroeléctrica
+            </h6>
+            <p>
+                La energía hidroeléctrica es aquella que se genera al transformar la fuerza del agua en energía eléctrica.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-1 col-xl-1 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            </h6>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+            <p><i class="fas fa-home me-3"></i>Berna, Suiza</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>palaciospatinosantiago@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i>+57 321 6180097</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright:
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+    <!-- Start Script -->
+    <script src="{{url_for('static', filename='js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/templatemo.js')}}"></script>
+    <script src="{{url_for('static', filename='js/custom.js')}}"></script>
+    <!-- End Script -->
+</body>
+
+</html>
